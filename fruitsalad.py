@@ -113,7 +113,7 @@ class FruitSaladTool():
         # Dont obfuscate well known system namespaces
         if ns in ['local.oplog.rs', 'oplog.rs']:
             return ns
-        parts = ns.split('.')
+        parts = str(ns).split('.')
         replaced = []
         for i, part in enumerate(parts):
             if i == 0 and part in ['system', 'local', 'admin', 'config'] or part in ['$cmd']:
